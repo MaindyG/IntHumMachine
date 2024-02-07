@@ -1,1 +1,1 @@
-# IntHumMachine
+# Projet Interface Humain-Machine
