@@ -20,7 +20,7 @@ document.getElementById('connectButton').addEventListener('click', () => {
     initializeApiOnly();
 });
 
-document.getElementById('startBtn').addEventListener('click', () => {
+document.getElementById('playBtn').addEventListener('click', () => {
     if (currentSession) {
         loadMedia(videoList[currentVideoIndex]);
     } else {
@@ -51,7 +51,7 @@ document.getElementById('playBtn').addEventListener('click', () => {
 
 function sessionListener(newSession) {
     currentSession = newSession;
-    document.getElementById('startBtn').style.display = 'block';
+    document.getElementById('playBtn').style.display = 'block';
     document.getElementById('nextBtn').style.display = 'block';
 }
 
