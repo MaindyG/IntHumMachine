@@ -1,7 +1,15 @@
 let session;
 let media;
+let currentSession;
+let currentMediaSession;
 let isPlaying = true;
 let currentVideoIndex = 0;
+let currentVideoUrl;
+let updateInterval;
+const seekSlider = document.getElementById('seekSlider');
+const currentTimeElement = document.getElementById('currentTime');
+const totalTimeElement = document.getElementById('totalTime');
+const defaultContentType = 'video/mp4';
 const applicationID = '3DDC41A0';
 const videoList = [
     'https://transfertco.ca/video/DBillPrelude.mp4',
@@ -50,6 +58,31 @@ function Next(){
     });
 }
 
+function initializeSeekSlider(remotePlayerController, mediaSession) {
+    currentMediaSession = mediaSession;
+    document.getElementById('playBtn').style.display = 'block';
+   // Set max value of seek slider to media duration in seconds
+   seekSlider.max = mediaSession.media.duration;
+
+    // Update seek slider and time elements on time update
+    updateInterval = setInterval(() => {
+        const currentTime = mediaSession.getEstimatedTime();
+        const totalTime = mediaSession.media.duration;
+  
+        seekSlider.value = currentTime;
+        currentTimeElement.textContent = formatTime(currentTime);
+        totalTimeElement.textContent = formatTime(totalTime);
+      }, 1000); //chaque 1000 ms... 1 sec
+  
+      // slider change
+      seekSlider.addEventListener('input', () => {
+        const seekTime = parseFloat(seekSlider.value);
+        remotePlayerController.seek(seekTime);
+      });
+ }  
+
+
+
 function VolumeUp() {
     var volumeUpBtn = document.getElementById("volumeUpBtn");
 
@@ -59,7 +92,6 @@ function VolumeUp() {
         volumeUpBtn.classList.remove("clicked");
     }, 100);
 
-    // Add event listener for increasing volume
     document.getElementById('setVolHigh').addEventListener('click', function() {
         this.volumeLevel = Number(this._player.volumeLevel);
         this.volumeLevel += 0.1;
@@ -67,7 +99,7 @@ function VolumeUp() {
             this.volumeLevel = 1.0;
         }
         this._player.setVolume(this.volumeLevel);
-    }.bind(this)); // bind this to ensure it refers to the expected object
+    }.bind(this));
 }
 
 function VolumeDown() {
@@ -79,7 +111,6 @@ function VolumeDown() {
         volumeDownBtn.classList.remove("clicked");
     }, 100);
 
-    // Add event listener for decreasing volume
     document.getElementById('setVolLow').addEventListener('click', function() {
         this.volumeLevel = Number(this._player.volumeLevel);
         this.volumeLevel -= 0.1;
@@ -87,7 +118,7 @@ function VolumeDown() {
             this.volumeLevel = 0.0;
         }
         this._player.setVolume(this.volumeLevel);
-    }.bind(this)); // bind this to ensure it refers to the expected object
+    }.bind(this)); 
 }
 
 
