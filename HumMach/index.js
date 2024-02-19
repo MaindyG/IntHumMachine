@@ -146,11 +146,11 @@ function Previous(){
 
 function Play(){
     document.getElementById('playBtn').addEventListener('click', () => {
-        if (media) {
+        if (currentMediaSession) {
             if (isPlaying) {
-                media.pause(null, onMediaCommandSuccess, onError);
+                currentMediaSession.pause(null, onMediaCommandSuccess, onError);
             } else {
-                media.play(null, onMediaCommandSuccess, onError);
+                currentMediaSession.play(null, onMediaCommandSuccess, onError);
             }
             isPlaying = !isPlaying;
         }
