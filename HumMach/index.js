@@ -37,6 +37,15 @@ document.getElementById('nextBtn').addEventListener('click', () => {
     }
 });
 
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (session) {
+        currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
+        loadMedia(videoList[currentVideoIndex]);
+    } else {
+        alert('Connectez-vous sur chromecast en premier');
+    }
+});
+
 document.getElementById('playBtn').addEventListener('click', () => {
     if (currentMediaSession) {
         if (isPlaying) {
