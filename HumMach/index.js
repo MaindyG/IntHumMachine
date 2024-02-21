@@ -6,6 +6,7 @@ let currentVideoUrl;
 let updateInterval;
 const seekSlider = document.getElementById('seekSlider');
 const currentTimeElement = document.getElementById('currentTime');
+const muteToggle = document.getElementById('muteToggle');
 const totalTimeElement = document.getElementById('totalTime');
 const defaultContentType = 'video/mp4';
 const applicationID = '3DDC41A0';
@@ -37,6 +38,9 @@ document.getElementById('playBtn').addEventListener('click', () => {
         }
         isPlaying = !isPlaying;
     }
+});
+document.getElementById('muteButton').addEventListener('click', () => {
+    initializeMuted();
 });
 
 
