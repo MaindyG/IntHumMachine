@@ -16,15 +16,30 @@ const videoList = [
     // Add more video URLs as needed
 ];
 
-document.getElementById('connectButton').addEventListener('click', initializeApiOnly);
+document.getElementById('connectButton').addEventListener('click', () => {
+    initializeApiOnly();
+});
 
-document.getElementById('playBtn').addEventListener('click', () => {
+document.getElementById('startBtn').addEventListener('click', () => {
     if (currentSession) {
         loadMedia(videoList[currentVideoIndex]);
     } else {
         alert('Connectez-vous sur chromecast en premier');
     }
 });
+
+document.getElementById('playBtn').addEventListener('click', () => {
+    if (currentMediaSession) {
+        if (isPlaying) {
+            currentMediaSession.pause(null, onMediaCommandSuccess, onError);
+        } else {
+            currentMediaSession.play(null, onMediaCommandSuccess, onError);
+        }
+        isPlaying = !isPlaying;
+    }
+});
+
+
 
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentSession) {
@@ -44,22 +59,16 @@ document.getElementById('prevBtn').addEventListener('click', () => {
     }
 });
 
-document.getElementById('playBtn').addEventListener('click', () => {
-    if (currentMediaSession) {
-        if (isPlaying) {
-            currentMediaSession.pause(null, onMediaCommandSuccess, onError);
-        } else {
-            currentMediaSession.play(null, onMediaCommandSuccess, onError);
-        }
-        isPlaying = !isPlaying;
-    }
-});
+
+
 
 function sessionListener(newSession) {
     currentSession = newSession;
     document.getElementById('playBtn').style.display = 'block';
     document.getElementById('nextBtn').style.display = 'block';
 }
+
+
 
 function initializeSeekSlider(remotePlayerController, mediaSession) {
     currentMediaSession = mediaSession;
@@ -131,10 +140,90 @@ function formatTime(timeInSeconds) {
     return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
-document.getElementById('muteButton').addEventListener('click', function() {
-    if (!this.muted) {
-        return this._controller.muteOrUnmute();
-    } else {
-        return this._controller.muteOrUnmute();
-    }
-});
+function Login(){
+    document.getElementById('connectButton').addEventListener('click', () => {
+        initializeApiOnly();
+    });
+}
+
+function Previous(){
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (session) {
+            currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
+            loadMedia(videoList[currentVideoIndex]);
+        } else {
+            alert('Connectez-vous sur chromecast en premier');
+        }
+    });
+}
+
+function initializeMuted() {
+    //Ajout listener + boutton
+    muteToggle.addEventListener('click', () => {
+        if (currentMediaSession.volume.muted) {
+            // Unmute
+            const volume = new chrome.cast.Volume(lastVolumeLevel, false);
+            const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
+            currentMediaSession.setVolume(volumeRequest, onMediaCommandSuccess, onError);
+        } else {
+            
+            
+            lastVolumeLevel = currentMediaSession.volume.level;
+            // Mute
+            const volume = new chrome.cast.Volume(0, true);
+            const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
+            currentMediaSession.setVolume(volumeRequest, onMediaCommandSuccess, onError);
+        }
+    });
+}
+
+
+
+function VolumeUp() {
+    var volumeUpBtn = document.getElementById("volumeUpBtn");
+
+    volumeUpBtn.classList.add("clicked");
+
+    setTimeout(function() {
+        volumeUpBtn.classList.remove("clicked");
+    }, 100);
+
+    document.getElementById('setVolHigh').addEventListener('click', function() {
+        this.volumeLevel = Number(this._player.volumeLevel);
+        this.volumeLevel += 0.1;
+        if (this.volumeLevel > 1.0) {
+            this.volumeLevel = 1.0;
+        }
+        this._player.setVolume(this.volumeLevel);
+    }.bind(this));
+}
+
+function VolumeDown() {
+    var volumeDownBtn = document.getElementById("volumeDownBtn");
+
+    volumeDownBtn.classList.add("clicked");
+
+    setTimeout(function() {
+        volumeDownBtn.classList.remove("clicked");
+    }, 100);
+
+    document.getElementById('setVolLow').addEventListener('click', function() {
+        this.volumeLevel = Number(this._player.volumeLevel);
+        this.volumeLevel -= 0.1;
+        if (this.volumeLevel < 0.0) {
+            this.volumeLevel = 0.0;
+        }
+        this._player.setVolume(this.volumeLevel);
+    }.bind(this)); 
+}
+
+
+
+function Info(){
+    document.getElementById('info').addEventListener('click', () => {
+        return this.title
+    
+    });
+}
+
+
