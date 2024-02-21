@@ -188,14 +188,15 @@ function VolumeUp() {
         volumeUpBtn.classList.remove("clicked");
     }, 100);
 
-    document.getElementById('setVolHigh').addEventListener('click', function() {
-        this.volumeLevel = Number(this._player.volumeLevel);
-        this.volumeLevel += 0.1;
-        if (this.volumeLevel > 1.0) {
-            this.volumeLevel = 1.0;
-        }
-        this._player.setVolume(this.volumeLevel);
-    }.bind(this));
+    // Vérifiez d'abord si une session multimédia est active
+    if (currentMediaSession) {
+        // Obtenez le niveau de volume actuel
+        const currentVolume = currentMediaSession.volume.level;
+        // Définissez le nouveau niveau de volume en augmentant de 0.1
+        const newVolume = Math.min(currentVolume + 0.1, 1.0);
+        // Appliquez le nouveau niveau de volume
+        setVolume(newVolume);
+    }
 }
 
 function VolumeDown() {
@@ -207,14 +208,24 @@ function VolumeDown() {
         volumeDownBtn.classList.remove("clicked");
     }, 100);
 
-    document.getElementById('setVolLow').addEventListener('click', function() {
-        this.volumeLevel = Number(this._player.volumeLevel);
-        this.volumeLevel -= 0.1;
-        if (this.volumeLevel < 0.0) {
-            this.volumeLevel = 0.0;
-        }
-        this._player.setVolume(this.volumeLevel);
-    }.bind(this)); 
+    // Vérifiez d'abord si une session multimédia est active
+    if (currentMediaSession) {
+        // Obtenez le niveau de volume actuel
+        const currentVolume = currentMediaSession.volume.level;
+        // Définissez le nouveau niveau de volume en diminuant de 0.1
+        const newVolume = Math.max(currentVolume - 0.1, 0.0);
+        // Appliquez le nouveau niveau de volume
+        setVolume(newVolume);
+    }
+}
+
+// Fonction pour définir le volume
+function setVolume(volumeLevel) {
+    if (currentMediaSession) {
+        const volume = new chrome.cast.Volume(volumeLevel);
+        const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
+        currentMediaSession.setVolume(volumeRequest, onMediaCommandSuccess, onError);
+    }
 }
 
 
