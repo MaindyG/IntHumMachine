@@ -6,10 +6,9 @@ let currentVideoUrl;
 let updateInterval;
 const seekSlider = document.getElementById('seekSlider');
 const currentTimeElement = document.getElementById('currentTime');
-const muteToggle = document.getElementById('muteToggle');
+const muteToggle = document.getElementById('muteButton');
 const totalTimeElement = document.getElementById('totalTime');
 const defaultContentType = 'video/mp4';
-const applicationID = '3DDC41A0';
 const videoList = [
     'https://transfertco.ca/video/DBillPrelude.mp4',
     'https://transfertco.ca/video/DBillSpotted.mp4',
@@ -55,7 +54,7 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 });
 
 document.getElementById('prevBtn').addEventListener('click', () => {
-    if (session) {
+    if (currentSession) {
         currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
         loadMedia(videoList[currentVideoIndex]);
     } else {
@@ -150,16 +149,16 @@ function Login(){
     });
 }
 
-function Previous(){
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (session) {
-            currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
-            loadMedia(videoList[currentVideoIndex]);
-        } else {
-            alert('Connectez-vous sur chromecast en premier');
-        }
-    });
-}
+// function Previous(){
+//     document.getElementById('prevBtn').addEventListener('click', () => {
+//         if (session) {
+//             currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
+//             loadMedia(videoList[currentVideoIndex]);
+//         } else {
+//             alert('Connectez-vous sur chromecast en premier');
+//         }
+//     });
+// }
 
 function initializeMuted() {
     //Ajout listener + boutton
