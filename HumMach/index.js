@@ -1,243 +1,100 @@
-let currentSession;
-let currentMediaSession;
-let isPlaying = true;
-let currentVideoIndex = 0;
-let currentVideoUrl;
-let updateInterval;
-const seekSlider = document.getElementById('seekSlider');
-const currentTimeElement = document.getElementById('currentTime');
-const muteToggle = document.getElementById('muteButton');
-const totalTimeElement = document.getElementById('totalTime');
-const defaultContentType = 'video/mp4';
-const videoList = [
-    'https://transfertco.ca/video/DBillPrelude.mp4',
-    'https://transfertco.ca/video/DBillSpotted.mp4',
-    'https://transfertco.ca/video/usa23_7_02.mp4'
-    // Add more video URLs as needed
-];
+<!DOCTYPE html>
+<html lang="en">
 
-document.getElementById('connectButton').addEventListener('click', () => {
-    initializeApiOnly();
-});
-
-document.getElementById('startBtn').addEventListener('click', () => {
-    if (currentSession) {
-        loadMedia(videoList[currentVideoIndex]);
-    } else {
-        alert('Connectez-vous sur chromecast en premier');
-    }
-});
-
-document.getElementById('playBtn').addEventListener('click', () => {
-    if (currentMediaSession) {
-        if (isPlaying) {
-            currentMediaSession.pause(null, onMediaCommandSuccess, onError);
-        } else {
-            currentMediaSession.play(null, onMediaCommandSuccess, onError);
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Control App | theuicode.com </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="remote.css">
+    <style>
+        .container>.control:focus {
+            background-color: aquamarine;
         }
-        isPlaying = !isPlaying;
-    }
-});
-document.getElementById('muteButton').addEventListener('click', () => {
-    initializeMuted();
-});
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex flex-row justify-content-between px-3 py-4 align-items-center">
+            <!--<i class="fas fa-chevron-left"></i>-->
+            <span>Classroom - Chromecast</span>
+            <!--<i class="fas fa-ellipsis-h"></i>-->
+        </div>
+        <div class="d-flex flex-row mt-4 justify-content-start px-5">
+            <div class="menu-grid">
+                <div id="connectButton" style="cursor: pointer;" class="d-flex flex-column align-items-center">
+                    <i class="fas fa-unlock-alt"></i>
+                    <span class="label">Connexion</span>
+                </div>
+                <div id="startBtn" style="cursor: pointer;" class="d-flex flex-column align-items-center">
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                    <span class="label">Start</span>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <div class="mt-4"></div>
 
 
 
-document.getElementById('nextBtn').addEventListener('click', () => {
-    if (currentSession) {
-        currentVideoIndex = (currentVideoIndex + 1) % videoList.length;
-        loadMedia(videoList[currentVideoIndex]);
-    } else {
-        alert('Connectez-vous sur chromecast en premier');
-    }
-});
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-    if (currentSession) {
-        currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
-        loadMedia(videoList[currentVideoIndex]);
-    } else {
-        alert('Connectez-vous sur chromecast en premier');
-    }
-});
+        <div class="d-flex flex-row justify-content-center">
+            <div class="menu-grid">
 
 
+                <div id="prevBtn" style="cursor: pointer;" class="d-flex flex-column align-items-center"
+                    onclick=Previous()>
+                    <i class="fas fa-step-backward"></i>
+                    <span class="label">Previous</span>
+                </div>
+                <div id="playBtn" style="cursor: pointer;" class="d-flex flex-column align-items-center" onclick=Play()>
+                    <i class="fas fa-play-circle"></i>
+                    <span class="label">Pause/Play</span>
+                </div>
+                <div id="nextBtn" style="cursor: pointer;" class="d-flex flex-column align-items-center" onclick=Next()>
+                    <i class="fas fa-step-forward"></i>
+                    <span class="label">Next</span>
+                </div>
 
 
-function sessionListener(newSession) {
-    currentSession = newSession;
-    document.getElementById('playBtn').style.display = 'block';
-    document.getElementById('nextBtn').style.display = 'block';
-}
+            </div>
+        </div>
 
+        <div class="col-lg-8 px-0">
+            <input type="range" id="seekSlider" min="0" max="100" step="1" value="0" style="width: 100%"><br>
+            <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+        </div>
 
+        <div class="d-flex justify-content-center mt-4">
+            <div class="d-flex flex-column align-items-center"></div>
+            <div name="control"
+                class="d-flex flex-column rounded-bg py-3 px-4 justify-content-center align-items-center">
+                <button id="volumeUpBtn" style="cursor: pointer;" class="btn btn-link p-0 m-0" onclick="VolumeUp()">
+                    <i class="fas fa-plus-circle py-3 control-icon"></i>
+                </button>
+                <span class="label py-3">Volume</span>
+                <button id="volumeDownBtn" style="cursor: pointer;" class="btn btn-link p-0 m-0" onclick="VolumeDown()">
+                    <i class="fas fa-minus-circle py-3 control-icon"></i>
+                </button>
+            </div>
+        </div>
 
-function initializeSeekSlider(remotePlayerController, mediaSession) {
-    currentMediaSession = mediaSession;
-    document.getElementById('playBtn').style.display = 'block';
-   // Set max value of seek slider to media duration in seconds
-   seekSlider.max = mediaSession.media.duration;
+        <div class="d-flex flex-row justify-content-center mt-5 pt-4 px-3">
+            <div id="muteButton" class="d-flex flex-row grey-bg justify-content-center align-items-center">
+                <i style="cursor: pointer;" class="fas fa-volume-mute p-3 control-icon"></i>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+    <script src="index.js"></script>
+</body>
 
-    // Update seek slider and time elements on time update
-    updateInterval = setInterval(() => {
-        const currentTime = mediaSession.getEstimatedTime();
-        const totalTime = mediaSession.media.duration;
-  
-        seekSlider.value = currentTime;
-        currentTimeElement.textContent = formatTime(currentTime);
-        totalTimeElement.textContent = formatTime(totalTime);
-      }, 1000); //chaque 1000 ms... 1 sec
-  
-      // slider change
-      seekSlider.addEventListener('input', () => {
-        const seekTime = parseFloat(seekSlider.value);
-        remotePlayerController.seek(seekTime);
-      });
- }
-
-function receiverListener(availability) {
-    if (availability === chrome.cast.ReceiverAvailability.AVAILABLE) {
-        document.getElementById('connectButton').style.display = 'block';
-    } else {
-        document.getElementById('connectButton').style.display = 'none';
-    }
-}
-
-function onInitSuccess() {
-    console.log('Chromecast init success');
-}
-
-function onError(error) {
-    console.error('Chromecast initialization error', error);
-}
-
-function onMediaCommandSuccess() {
-    console.log('Media command success');
-}
-
-function initializeApiOnly() {
-    
-    const sessionRequest = new chrome.cast.SessionRequest(chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID);
-    const apiConfig = new chrome.cast.ApiConfig(sessionRequest, sessionListener, receiverListener);
-
-    chrome.cast.initialize(apiConfig, onInitSuccess, onError);
-}
-
-function loadMedia(videoUrl) {
-    currentVideoUrl = videoUrl;
-    const mediaInfo = new chrome.cast.media.MediaInfo(videoUrl, defaultContentType);
-    const request = new chrome.cast.media.LoadRequest(mediaInfo);
-    const remotePlayer = new cast.framework.RemotePlayer();
-    const remotePlayerController = new cast.framework.RemotePlayerController(remotePlayer);
-
-    currentSession.loadMedia(request, mediaSession => {
-        console.log('Media chargé avec succès');
-        initializeSeekSlider(remotePlayerController, mediaSession);
-      }, onError);
-}
-
-function formatTime(timeInSeconds) {
-    const minutes = Math.floor(timeInSeconds / 60);
-    const seconds = Math.floor(timeInSeconds % 60);
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-}
-
-function Login(){
-    document.getElementById('connectButton').addEventListener('click', () => {
-        initializeApiOnly();
-    });
-}
-
-// function Previous(){
-//     document.getElementById('prevBtn').addEventListener('click', () => {
-//         if (session) {
-//             currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
-//             loadMedia(videoList[currentVideoIndex]);
-//         } else {
-//             alert('Connectez-vous sur chromecast en premier');
-//         }
-//     });
-// }
-
-function initializeMuted() {
-    //Ajout listener + boutton
-    muteToggle.addEventListener('click', () => {
-        if (currentMediaSession.volume.muted) {
-            // Unmute
-            const volume = new chrome.cast.Volume(lastVolumeLevel, false);
-            const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
-            currentMediaSession.setVolume(volumeRequest, onMediaCommandSuccess, onError);
-        } else {
-            
-            
-            lastVolumeLevel = currentMediaSession.volume.level;
-            // Mute
-            const volume = new chrome.cast.Volume(0, true);
-            const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
-            currentMediaSession.setVolume(volumeRequest, onMediaCommandSuccess, onError);
-        }
-    });
-}
-
-
-
-function VolumeUp() {
-    var volumeUpBtn = document.getElementById("volumeUpBtn");
-
-    volumeUpBtn.classList.add("clicked");
-
-    setTimeout(function() {
-        volumeUpBtn.classList.remove("clicked");
-    }, 100);
-
-    // Vérifiez d'abord si une session multimédia est active
-    if (currentMediaSession) {
-        // Obtenez le niveau de volume actuel
-        const currentVolume = currentMediaSession.volume.level;
-        // Définissez le nouveau niveau de volume en augmentant de 0.1
-        const newVolume = Math.min(currentVolume + 0.1, 1.0);
-        // Appliquez le nouveau niveau de volume
-        setVolume(newVolume);
-    }
-}
-
-function VolumeDown() {
-    var volumeDownBtn = document.getElementById("volumeDownBtn");
-
-    volumeDownBtn.classList.add("clicked");
-
-    setTimeout(function() {
-        volumeDownBtn.classList.remove("clicked");
-    }, 100);
-
-    // Vérifiez d'abord si une session multimédia est active
-    if (currentMediaSession) {
-        // Obtenez le niveau de volume actuel
-        const currentVolume = currentMediaSession.volume.level;
-        // Définissez le nouveau niveau de volume en diminuant de 0.1
-        const newVolume = Math.max(currentVolume - 0.1, 0.0);
-        // Appliquez le nouveau niveau de volume
-        setVolume(newVolume);
-    }
-}
-
-// Fonction pour définir le volume
-function setVolume(volumeLevel) {
-    if (currentMediaSession) {
-        const volume = new chrome.cast.Volume(volumeLevel);
-        const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
-        currentMediaSession.setVolume(volumeRequest, onMediaCommandSuccess, onError);
-    }
-}
-
-
-
-function Info(){
-    document.getElementById('info').addEventListener('click', () => {
-        return this.title
-    
-    });
-}
-
-
+</html>
