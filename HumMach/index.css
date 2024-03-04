@@ -1,0 +1,17 @@
+.container{
+    background-color:black ;
+}
+
+.myDiv {
+    text-align: center;
+}
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.info {
+    text-align: right;
+}
