@@ -88,10 +88,8 @@ function sessionListener(newSession) {
 function initializeSeekSlider(remotePlayerController, mediaSession) {
     currentMediaSession = mediaSession;
     document.getElementById('playBtn').style.display = 'block';
-    // Set max value of seek slider to media duration in seconds
     seekSlider.max = mediaSession.media.duration;
 
-    // Update seek slider and time elements on time update
     updateInterval = setInterval(() => {
         const currentTime = mediaSession.getEstimatedTime();
         const totalTime = mediaSession.media.duration;
@@ -99,9 +97,8 @@ function initializeSeekSlider(remotePlayerController, mediaSession) {
         seekSlider.value = currentTime;
         currentTimeElement.textContent = formatTime(currentTime);
         totalTimeElement.textContent = formatTime(totalTime);
-    }, 1000); //chaque 1000 ms... 1 sec
+    }, 1000); 
 
-    // slider change
     seekSlider.addEventListener('input', () => {
         const seekTime = parseFloat(seekSlider.value);
         remotePlayerController.seek(seekTime);
@@ -161,22 +158,11 @@ function Login() {
     });
 }
 
-// function Previous(){
-//     document.getElementById('prevBtn').addEventListener('click', () => {
-//         if (session) {
-//             currentVideoIndex = (currentVideoIndex - 1) % videoList.length;
-//             loadMedia(videoList[currentVideoIndex]);
-//         } else {
-//             alert('Connectez-vous sur chromecast en premier');
-//         }
-//     });
-// }
 
 function initializeMuted() {
-    //Ajout listener + boutton
     muteToggle.addEventListener('click', () => {
         if (currentMediaSession.volume.muted) {
-            // Unmute
+
             const volume = new chrome.cast.Volume(lastVolumeLevel, false);
             const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
             currentMediaSession.setVolume(volumeRequest, onMediaCommandSuccess, onError);
@@ -184,7 +170,7 @@ function initializeMuted() {
 
 
             lastVolumeLevel = currentMediaSession.volume.level;
-            // Mute
+
             const volume = new chrome.cast.Volume(0, true);
             const volumeRequest = new chrome.cast.media.VolumeRequest(volume);
             currentMediaSession.setVolume(volumeRequest, onMediaCommandSuccess, onError);
@@ -203,13 +189,9 @@ function VolumeUp() {
         volumeUpBtn.classList.remove("clicked");
     }, 100);
 
-    // Vérifiez d'abord si une session multimédia est active
     if (currentMediaSession) {
-        // Obtenez le niveau de volume actuel
         const currentVolume = currentMediaSession.volume.level;
-        // Définissez le nouveau niveau de volume en augmentant de 0.1
         const newVolume = Math.min(currentVolume + 0.1, 1.0);
-        // Appliquez le nouveau niveau de volume
         setVolume(newVolume);
     }
 }
@@ -223,18 +205,14 @@ function VolumeDown() {
         volumeDownBtn.classList.remove("clicked");
     }, 100);
 
-    // Vérifiez d'abord si une session multimédia est active
     if (currentMediaSession) {
-        // Obtenez le niveau de volume actuel
         const currentVolume = currentMediaSession.volume.level;
-        // Définissez le nouveau niveau de volume en diminuant de 0.1
         const newVolume = Math.max(currentVolume - 0.1, 0.0);
-        // Appliquez le nouveau niveau de volume
+ 
         setVolume(newVolume);
     }
 }
 
-// Fonction pour définir le volume
 function setVolume(volumeLevel) {
     if (currentMediaSession) {
         const volume = new chrome.cast.Volume(volumeLevel);
@@ -244,12 +222,5 @@ function setVolume(volumeLevel) {
 }
 
 
-
-function Info() {
-    document.getElementById('info').addEventListener('click', () => {
-        return this.title
-
-    });
-}
 
 

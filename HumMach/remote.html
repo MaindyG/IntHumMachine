@@ -13,18 +13,14 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="remote.css">
     <style>
-        .container>.control:focus {
-            background-color: aquamarine;
-        }
+        
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="d-flex flex-row justify-content-between px-3 py-4 align-items-center">
-            <!--<i class="fas fa-chevron-left"></i>-->
-            <span>Classroom - Chromecast</span>
-            <!--<i class="fas fa-ellipsis-h"></i>-->
+        <div class=" row justify-content-center  px-3 py-4 ">
+          <span> Classroom - Chromecast</span>
         </div>
         <div class="d-flex flex-row mt-4 justify-content-start px-5">
             <div class="menu-grid">
@@ -33,29 +29,21 @@
                     <span class="label">Connexion</span>
                 </div>
                 <div id="startBtn" style="cursor: pointer;" class="d-flex flex-column align-items-center">
-                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                    <i class="fas fa-play-circle" aria-hidden="true"></i>
                     <span class="label">Start</span>
                 </div>
-                
-
-            </div>
         </div>
-
+        </div>
         <div class="mt-4"></div>
-
-
-
         <div class="d-flex flex-row justify-content-center">
             <div class="menu-grid">
-
-
                 <div id="prevBtn" style="cursor: pointer;" class="d-flex flex-column align-items-center"
                     onclick=Previous()>
                     <i class="fas fa-step-backward"></i>
                     <span class="label">Previous</span>
                 </div>
                 <div id="playBtn" style="cursor: pointer;" class="d-flex flex-column align-items-center" onclick=Play()>
-                    <i class="fas fa-play-circle"></i>
+                    <i class="fas fa-pause-circle"></i>
                     <span class="label">Pause/Play</span>
                 </div>
                 <div id="nextBtn" style="cursor: pointer;" class="d-flex flex-column align-items-center" onclick=Next()>
@@ -66,12 +54,12 @@
 
             </div>
         </div>
-
-        <div class="col-lg-8 px-0">
-            <input type="range" id="seekSlider" min="0" max="100" step="1" value="0" style="width: 100%"><br>
-            <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
-        </div>
-
+        <div class="row justify-content-center">
+            <div class="col-lg-8 px-0">
+                <input type="range" id="seekSlider" min="0" max="100" step="1" value="0" style="width: 100%"><br>
+                <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+            </div>
+        </div>        
         <div class="d-flex justify-content-center mt-4">
             <div class="d-flex flex-column align-items-center"></div>
             <div name="control"
@@ -80,21 +68,15 @@
                     <i class="fas fa-plus-circle py-3 control-icon"></i>
                 </button>
                 <span class="label py-3">Volume</span>
-                <button id="volumeDownBtn" style="cursor: pointer;" class="btn btn-link p-0 m-0" onclick="VolumeDown()">
+                <button id="volumeDownBtn" style="cursor: pointer;" class="btn btn-link p-0 mb-3" onclick="VolumeDown()">
                     <i class="fas fa-minus-circle py-3 control-icon"></i>
                 </button>
-            </div>
-        </div>
-
-
-
-
-        <div class="d-flex flex-row justify-content-between mt-5 pt-4 px-3">
-            <div class="d-flex flex-row grey-bg" onclick=Info()>
-                <i style="cursor: pointer;" class="fas fa-info p-3 control-icon"></i>
-            </div>
-            <div id="muteButton" class="d-flex flex-row grey-bg">
-                <i style="cursor: pointer;" class="fas fa-volume-mute p-3 control-icon"></i>
+                <button id="muteButton" style="cursor: pointer;" class="btn btn-link p-0 mb-3" onclick="VolumeDown()">
+                    <i class="fas fa-minus-circle py-3 control-icon"></i>
+                </button>
+                <div id="muteButton" class="d-flex flex-row grey-bg">
+                    <i style="cursor: pointer;" class="fas fa-volume-mute p-3 mb-2 control-icon"></i>
+                </div>
             </div>
         </div>
     </div>
