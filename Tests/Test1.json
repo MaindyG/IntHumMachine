@@ -1,0 +1,1600 @@
+{
+    "title": "Test1",
+    "selectorAttribute": "Test1Schneider",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1164,
+            "height": 996,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "http://127.0.0.1:5500/IntHumMachine/HumMach/remote.html",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "http://127.0.0.1:5500/IntHumMachine/HumMach/remote.html",
+                    "title": "Remote Control App | theuicode.com"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "body"
+                ],
+                [
+                    "xpath//html/body"
+                ],
+                [
+                    "pierce/body"
+                ]
+            ],
+            "offsetY": 472,
+            "offsetX": 1035
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#connectButton"
+                ],
+                [
+                    "xpath///*[@id=\"connectButton\"]"
+                ],
+                [
+                    "pierce/#connectButton"
+                ]
+            ],
+            "offsetY": 17.86663818359375,
+            "offsetX": 89.53329467773438
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#startBtn"
+                ],
+                [
+                    "xpath///*[@id=\"startBtn\"]"
+                ],
+                [
+                    "pierce/#startBtn"
+                ]
+            ],
+            "offsetY": 28.86663818359375,
+            "offsetX": 34.89996337890625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#nextBtn > span"
+                ],
+                [
+                    "xpath///*[@id=\"nextBtn\"]/span"
+                ],
+                [
+                    "pierce/#nextBtn > span"
+                ],
+                [
+                    "text/Next"
+                ]
+            ],
+            "offsetY": 13.266632080078125,
+            "offsetX": 9.1666259765625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#nextBtn > span"
+                ],
+                [
+                    "xpath///*[@id=\"nextBtn\"]/span"
+                ],
+                [
+                    "pierce/#nextBtn > span"
+                ],
+                [
+                    "text/Next"
+                ]
+            ],
+            "offsetY": 13.266632080078125,
+            "offsetX": 9.1666259765625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#prevBtn"
+                ],
+                [
+                    "xpath///*[@id=\"prevBtn\"]"
+                ],
+                [
+                    "pierce/#prevBtn"
+                ]
+            ],
+            "offsetY": 30.5333251953125,
+            "offsetX": 44.8499755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#playBtn > span"
+                ],
+                [
+                    "xpath///*[@id=\"playBtn\"]/span"
+                ],
+                [
+                    "pierce/#playBtn > span"
+                ],
+                [
+                    "text/Pause/Play"
+                ]
+            ],
+            "offsetY": 8.266632080078125,
+            "offsetX": 8.0333251953125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#playBtn > span"
+                ],
+                [
+                    "xpath///*[@id=\"playBtn\"]/span"
+                ],
+                [
+                    "pierce/#playBtn > span"
+                ],
+                [
+                    "text/Pause/Play"
+                ]
+            ],
+            "offsetY": 8.266632080078125,
+            "offsetX": 8.0333251953125
+        },
+        {
+            "type": "change",
+            "value": "246",
+            "selectors": [
+                [
+                    "#seekSlider"
+                ],
+                [
+                    "xpath///*[@id=\"seekSlider\"]"
+                ],
+                [
+                    "pierce/#seekSlider"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#seekSlider"
+                ],
+                [
+                    "xpath///*[@id=\"seekSlider\"]"
+                ],
+                [
+                    "pierce/#seekSlider"
+                ]
+            ],
+            "offsetY": 31.066650390625,
+            "offsetX": 384.2666320800781,
+            "duration": 720.6000000000931
+        },
+        {
+            "type": "change",
+            "value": "197",
+            "selectors": [
+                [
+                    "#seekSlider"
+                ],
+                [
+                    "xpath///*[@id=\"seekSlider\"]"
+                ],
+                [
+                    "pierce/#seekSlider"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#seekSlider"
+                ],
+                [
+                    "xpath///*[@id=\"seekSlider\"]"
+                ],
+                [
+                    "pierce/#seekSlider"
+                ]
+            ],
+            "offsetY": 15.066650390625,
+            "offsetX": 181.26663208007812
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375,
+            "duration": 442.80000000004657
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 40.13330078125,
+            "offsetX": 12.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 32.99993896484375,
+            "offsetX": 11.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 32.99993896484375,
+            "offsetX": 11.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 32.99993896484375,
+            "offsetX": 11.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 32.99993896484375,
+            "offsetX": 11.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 32.99993896484375,
+            "offsetX": 11.5999755859375
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 41.13330078125,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#muteButton > i"
+                ],
+                [
+                    "xpath///*[@id=\"muteButton\"]/i"
+                ],
+                [
+                    "pierce/#muteButton > i"
+                ]
+            ],
+            "offsetY": 39.86663818359375,
+            "offsetX": 3.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#muteButton > i"
+                ],
+                [
+                    "xpath///*[@id=\"muteButton\"]/i"
+                ],
+                [
+                    "pierce/#muteButton > i"
+                ]
+            ],
+            "offsetY": 39.86663818359375,
+            "offsetX": 3.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#muteButton > i"
+                ],
+                [
+                    "xpath///*[@id=\"muteButton\"]/i"
+                ],
+                [
+                    "pierce/#muteButton > i"
+                ]
+            ],
+            "offsetY": 39.86663818359375,
+            "offsetX": 3.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#muteButton > i"
+                ],
+                [
+                    "xpath///*[@id=\"muteButton\"]/i"
+                ],
+                [
+                    "pierce/#muteButton > i"
+                ]
+            ],
+            "offsetY": 39.86663818359375,
+            "offsetX": 3.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#muteButton > i"
+                ],
+                [
+                    "xpath///*[@id=\"muteButton\"]/i"
+                ],
+                [
+                    "pierce/#muteButton > i"
+                ]
+            ],
+            "offsetY": 39.86663818359375,
+            "offsetX": 3.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 26.99993896484375,
+            "offsetX": 15.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 26.99993896484375,
+            "offsetX": 15.5999755859375
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 26.99993896484375,
+            "offsetX": 15.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 26.99993896484375,
+            "offsetX": 15.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 26.99993896484375,
+            "offsetX": 15.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeDownBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeDownBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeDownBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 26.99993896484375,
+            "offsetX": 15.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#volumeUpBtn > i"
+                ],
+                [
+                    "xpath///*[@id=\"volumeUpBtn\"]/i"
+                ],
+                [
+                    "pierce/#volumeUpBtn > i"
+                ],
+                [
+                    "aria/",
+                    "aria/[role=\"generic\"]"
+                ]
+            ],
+            "offsetY": 36.13330078125,
+            "offsetX": 18.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#muteButton > i"
+                ],
+                [
+                    "xpath///*[@id=\"muteButton\"]/i"
+                ],
+                [
+                    "pierce/#muteButton > i"
+                ]
+            ],
+            "offsetY": 15.86663818359375,
+            "offsetX": 16.5999755859375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#muteButton > i"
+                ],
+                [
+                    "xpath///*[@id=\"muteButton\"]/i"
+                ],
+                [
+                    "pierce/#muteButton > i"
+                ]
+            ],
+            "offsetY": 15.86663818359375,
+            "offsetX": 16.5999755859375
+        }
+    ]
+}
