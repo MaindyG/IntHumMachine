@@ -45,6 +45,7 @@ function Play() {
     }
 };
 
+
 document.getElementById('muteButton').addEventListener('click', () => {
     initializeMuted();
 });
@@ -160,6 +161,14 @@ function Login() {
 
 
 function initializeMuted() {
+    var muteButton = document.getElementById("muteButton");
+
+    muteButton.classList.add("clicked");
+
+    setTimeout(function () {
+        muteButton.classList.remove("clicked");
+    }, 100);
+
     muteToggle.addEventListener('click', () => {
         if (currentMediaSession.volume.muted) {
 
@@ -177,6 +186,8 @@ function initializeMuted() {
         }
     });
 }
+
+
 
 
 
@@ -220,7 +231,6 @@ function setVolume(volumeLevel) {
         currentMediaSession.setVolume(volumeRequest, onMediaCommandSuccess, onError);
     }
 }
-
 
 
 
