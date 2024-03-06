@@ -26,7 +26,7 @@ Guide d'utilisation de notre télécommande :
 
     ===================
 
-    Notre seek slider est encore défaillant. Nous y reviendront dans la prochaine mise à jour
+    Notre seek slider est encore défaillant. Vous ne pourrez pas ajuster le temps de la vidéo et le volume à partir du slider. Nous y reviendront dans la prochaine mise à jour
     
  
   
