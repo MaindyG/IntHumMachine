@@ -13,7 +13,7 @@ Guide d'utilisation de notre télécommande :
   5- Appuyer sur le bouton " Demarrer "
   
   6-a) Cliquer sur Pause/Play pour faire pause ou play la vidéo
-    
+
     b) Cliquer sur le bouton Suivant pour passer à la vidéo suivante
 
     c) Cliquer sur le bouton Precedent pour passer à la vidéo précedente
@@ -27,6 +27,8 @@ Guide d'utilisation de notre télécommande :
     ===================
 
     Notre seek slider est encore défaillant. Nous y reviendront dans la prochaine mise à jour
+    
+ 
   
   
 Suite à la connexion au ChromeCast avec le bouton connexion, vous pouvez utiliser le bouton " Start " pour lancer la vidéo
