@@ -71,12 +71,16 @@
                 <button id="volumeDownBtn" style="cursor: pointer;" class="btn btn-link p-0 mb-3" onclick="VolumeDown()">
                     <i class="fas fa-minus-circle py-3 control-icon"></i>
                 </button>
-                <button id="muteButton" style="cursor: pointer;" class="btn btn-link p-0 mb-3" onclick="VolumeDown()">
-                    <i class="fas fa-minus-circle py-3 control-icon"></i>
-                </button>
-                <div id="muteButton" class="d-flex flex-row grey-bg">
-                    <i style="cursor: pointer;" class="fas fa-volume-mute p-3 mb-2 control-icon"></i>
-                </div>
+                
+                
+                
+                    <button id ="muteButton" class="btn btn-link p-0 mb-3" style="cursor: pointer;" onclick="initializeMuted()">
+                        <i class="fas fa-volume-mute py-3 control-icon" aria-hidden="true"></i><br>
+                        
+                        <span class="label py-3" style="text-decoration: none;">Mute</span>
+                    
+                    </button>
+                
             </div>
         </div>
     </div>
